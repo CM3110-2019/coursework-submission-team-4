@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "287921893425",
+    "firebase_url": "https://parkingappuni.firebaseio.com",
+    "project_id": "parkingappuni",
+    "storage_bucket": "parkingappuni.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:287921893425:android:cd31336c1ccd25f9742510",
+        "android_client_info": {
+          "package_name": "com.example.parkingprogram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "287921893425-bc43vj54cp6tli0snfgrbhaf7trtukfa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.parkingprogram",
+            "certificate_hash": "fc55ee6000fc3932df2150450a11bc73cf7bb722"
+          }
+        },
+        {
+          "client_id": "287921893425-ru600qk8o1e7tmvcs46mc42vebf2gf1i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCw1klINSc2DiveatKINhQMOt1Ouk1KiOs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "287921893425-ru600qk8o1e7tmvcs46mc42vebf2gf1i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:287921893425:android:036b56d03f960614742510",
+        "android_client_info": {
+          "package_name": "com.parkingappuni.parkingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "287921893425-ru600qk8o1e7tmvcs46mc42vebf2gf1i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCw1klINSc2DiveatKINhQMOt1Ouk1KiOs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "287921893425-ru600qk8o1e7tmvcs46mc42vebf2gf1i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
