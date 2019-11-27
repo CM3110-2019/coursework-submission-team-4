@@ -18,20 +18,9 @@
     <string name="title_activity_drawer_main">drawer_main</string>
 
 
-
-
-
-
-
-
-
     <string name="app_in_name">Register</string>
     <string name="app_name_after">New User?</string>
     <string name="login">Login</string>
-
-
-
-
 
 
 </resources>
