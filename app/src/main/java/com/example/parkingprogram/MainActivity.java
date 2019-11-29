@@ -217,11 +217,8 @@ public class MainActivity extends AppCompatActivity {
                             public void onSuccess(AuthResult authResult) {
                                 User user = new User();
                                 user.setEmail(email.getText().toString());
-
-                                user.setCarreg(carreg.getText().toString());
-
                                 user.setPassword(password.getText().toString());
-
+                                user.setCarreg(carreg.getText().toString());
                                 user.setUsername(username.getText().toString());
 
                                 users.child(FirebaseAuth.getInstance().getCurrentUser().getUid())
