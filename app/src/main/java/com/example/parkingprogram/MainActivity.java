@@ -132,12 +132,14 @@ public class MainActivity extends AppCompatActivity {
                     return;
 
                 }
+                startActivity(new Intent(MainActivity.this, Main5Activity.class));
+                finish();
 
-                auth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString())
+                /*auth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString())
                         .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                             @Override
                             public void onSuccess(AuthResult authResult) {
-                                startActivity(new Intent(MainActivity.this, MapActivity.class));
+                                startActivity(new Intent(MainActivity.this, ApiActi.class));
                                 finish();
                             }
                         }). addOnFailureListener(new OnFailureListener() {
@@ -145,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onFailure(@NonNull Exception e) {
                         Snackbar.make(root, "Error logging in." + e.getMessage(), Snackbar.LENGTH_SHORT).show();
                     }
-                });
+                });*/
 
             }
         });
