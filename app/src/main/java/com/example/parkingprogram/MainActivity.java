@@ -14,7 +14,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.RelativeLayout;
+
 import android.widget.Toast;
 
 import com.example.parkingprogram.ui.Models.User;
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
                         .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                             @Override
                             public void onSuccess(AuthResult authResult) {
-                                startActivity(new Intent(MainActivity.this, Main2Activity.class));
+                                startActivity(new Intent(MainActivity.this, Pars.class));
                                 finish();
                             }
                         }). addOnFailureListener(new OnFailureListener() {
