@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Setting the map key -->
+    <string name="map_key" translatable="false">
+        AIzaSyDclFCIYaiEkGdrdFmI6KqpP2lD353HxPw
+    </string>
+</resources>
