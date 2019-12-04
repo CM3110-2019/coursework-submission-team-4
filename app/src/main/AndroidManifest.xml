@@ -16,16 +16,20 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
 
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
         <meta-data android:name="com.google.android.geo.API_KEY"
             android:value="@string/map_key"/>
 
         <activity android:name=".MapActivity"></activity>
-        <activity android:name=".Main3Activity" />
-        <activity android:name=".Main6Activity" />
-        <activity android:name=".Main5Activity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".FavouritesActivity" />
+        <activity android:name=".MapFindActivity" />
         <!--activity android:name=".ApiActivity1" /-->
         <activity
-            android:name=".Main2Activity"
+            android:name=".LoginActivity"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">

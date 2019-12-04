@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#00ed8e"
-    tools:context=".Main3Activity">
+    tools:context=".RegisterActivity">
 
     <Button
         android:id="@+id/button10"

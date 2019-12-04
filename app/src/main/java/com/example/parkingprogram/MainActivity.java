@@ -1,6 +1,5 @@
 package com.example.parkingprogram;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -14,11 +13,9 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.parkingprogram.ui.Models.User;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
@@ -29,7 +26,7 @@ import com.rengwuxian.materialedittext.MaterialEditText;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    //Fields
     Button btnSignIn, btnRegister;
     FirebaseAuth auth;
     FirebaseDatabase db;
@@ -60,13 +57,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view)
             {
                 Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_SHORT).show();
-
-
-
-
             }
         });
 
+        //Finding by ids
         btnSignIn = findViewById(R.id.button11);
         btnRegister = findViewById(R.id.btnRegister);
         root = findViewById(R.id.root_element);
@@ -74,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         db = FirebaseDatabase.getInstance();
         users = db.getReference("Users");
 
+        //on click listener for the Register button
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        //on click listener for the Sign in button
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
 
 
 
@@ -132,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
 
                 }
-                startActivity(new Intent(MainActivity.this, Main5Activity.class));
+                startActivity(new Intent(MainActivity.this, MapFindActivity.class));
                 finish();
 
                 /*auth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString())
