@@ -2,7 +2,6 @@ package com.example.parkingprogram;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -29,7 +28,6 @@ public class MapFindActivity extends FragmentActivity implements OnMapReadyCallb
     private SearchView searchbtn;
     private Button logout;
     private Object mMapFragment1;
-
 
     //Getting the API
     private String url1 ="http://www.leedstravel.info/datex2/carparks/content.xml";
@@ -69,7 +67,6 @@ public class MapFindActivity extends FragmentActivity implements OnMapReadyCallb
         //Testing
         Log.d("xmltest", parser.getCarParkIdentity());
 
-
         //Printing to emulator
         TextView tvXml = (TextView) findViewById(R.id.tvXml);
         tvXml.setText(parser.getCarParkIdentity());
@@ -87,7 +84,6 @@ public class MapFindActivity extends FragmentActivity implements OnMapReadyCallb
                 .title("Marker in Leeds, UK"));
         //Setting map zoom level
         float zoomLevel = 16.0f;
-
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(leeds, zoomLevel));
         map.setOnInfoWindowClickListener(this);
     }
