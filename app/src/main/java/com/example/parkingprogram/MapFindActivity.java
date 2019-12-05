@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -18,16 +19,18 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.w3c.dom.Text;
 
-//public class MapFindActivity {
-        //extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
+
+public class MapFindActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
     //Creating fields
-   /* private Button btnfind;
+   private Button btnfind;
     private HandleXML parser;
     private SearchView searchbtn;
     private Button logout;
-    private Object mMapFragment1;*/
-/*
+    private Object mMapFragment1;
+
+
     //Getting the API
     private String url1 ="http://www.leedstravel.info/datex2/carparks/content.xml";
     private String url2 ="&mode=xml";
@@ -66,6 +69,10 @@ import com.google.android.gms.maps.model.MarkerOptions;
         //Testing
         Log.d("xmltest", parser.getCarParkIdentity());
 
+
+        //Printing to emulator
+        TextView tvXml = (TextView) findViewById(R.id.tvXml);
+        tvXml.setText(parser.getCarParkIdentity());
     }
 
 
@@ -93,11 +100,11 @@ import com.google.android.gms.maps.model.MarkerOptions;
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
-    }*/
+    }
 
-//}
-
-    public class MapFindActivity extends AppCompatActivity {
+}
+    // ------------------------JSOOOOOOON -----------------------
+    /*public class MapFindActivity extends AppCompatActivity {
 
         private Button btnFind;
 
@@ -119,4 +126,4 @@ import com.google.android.gms.maps.model.MarkerOptions;
             Intent intent = new Intent(this, CarParkData.class);
             startActivity(intent);
         }
-    }
+    }*/
