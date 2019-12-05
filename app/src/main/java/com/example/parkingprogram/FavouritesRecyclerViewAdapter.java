@@ -1,3 +1,4 @@
+/*
 package com.example.parkingprogram;
 
 import android.content.Context;
@@ -12,10 +13,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class FavouritesRecyclerViewAdapter extends RecyclerView.Adapter<FavouritesRecyclerViewAdapter.FavouritesViewHolder> {
-    private List<Favourites> favourites;
+    private List<FavouritesActivity> favourites;
     private LayoutInflater inflater;
 
-    public FavouritesRecyclerViewAdapter(Context context, List<Favourites> favourites){
+    public FavouritesRecyclerViewAdapter(Context context, List<FavouritesActivity> favourites){
         super();
         this.favourites = favourites;
         this.inflater = LayoutInflater.from(context);
@@ -26,7 +27,8 @@ public class FavouritesRecyclerViewAdapter extends RecyclerView.Adapter<Favourit
     @Override
 
     public FavouritesRecyclerViewAdapter.FavouritesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        view favouritesView = this.inflater.inflate(R.layout.location_list_item, parent, false);
+
+        View favouritesView = this.inflater.inflate(R.layout.location_list_item, parent, false);
         FavouritesViewHolder viewHolder = new FavouritesViewHolder(this. favouritesView);
         return favouritesView;
     }
@@ -75,3 +77,4 @@ public class FavouritesRecyclerViewAdapter extends RecyclerView.Adapter<Favourit
             }
         }
     }
+*/

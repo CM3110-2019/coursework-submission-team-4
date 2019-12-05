@@ -1,3 +1,4 @@
+/*
 package com.example.parkingprogram;
 
 import android.os.Bundle;
@@ -54,3 +55,4 @@ public class SharedPrefActivity extends AppCompatActivity implements CompoundBut
         sharedPrefsEditor.apply();
     }
 }
+*/

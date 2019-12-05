@@ -1,5 +1,6 @@
 package com.example.parkingprogram;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -16,6 +17,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.parkingprogram.ui.Models.User;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
@@ -129,11 +131,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, MapFindActivity.class));
                 finish();
 
-                /*auth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString())
+
+                //  COMMENT THIS IF LOGIN DOES NOT WORK
+                auth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString())
                         .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                             @Override
                             public void onSuccess(AuthResult authResult) {
-                                startActivity(new Intent(MainActivity.this, ApiActi.class));
+                                startActivity(new Intent(MainActivity.this, MapFindActivity.class));
                                 finish();
                             }
                         }). addOnFailureListener(new OnFailureListener() {
@@ -141,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onFailure(@NonNull Exception e) {
                         Snackbar.make(root, "Error logging in." + e.getMessage(), Snackbar.LENGTH_SHORT).show();
                     }
-                });*/
+                });  //UNTIL HERE
 
             }
         });
