@@ -1,0 +1,31 @@
+package com.example.parkingprogram;
+
+public class Favourite {
+
+    private boolean selected;
+    private String id;
+
+    public Favourite() {
+        super();
+    }
+
+    public Favourite(String id, boolean selected){
+        this.id = id;
+        this.selected = selected;
+
+    }
+
+
+
+    public String getId(String id) {
+        return id;
+    }
+
+    public boolean isSelected(boolean selected) {
+        return selected;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
+    }
+}
