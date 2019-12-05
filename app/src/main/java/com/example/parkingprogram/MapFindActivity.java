@@ -2,6 +2,7 @@ package com.example.parkingprogram;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,14 +19,15 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 
-public class MapFindActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
+//public class MapFindActivity {
+        //extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
     //Creating fields
-    private Button btnfind;
+   /* private Button btnfind;
     private HandleXML parser;
     private SearchView searchbtn;
     private Button logout;
-    private Object mMapFragment1;
-
+    private Object mMapFragment1;*/
+/*
     //Getting the API
     private String url1 ="http://www.leedstravel.info/datex2/carparks/content.xml";
     private String url2 ="&mode=xml";
@@ -78,6 +80,7 @@ public class MapFindActivity extends FragmentActivity implements OnMapReadyCallb
                 .title("Marker in Leeds, UK"));
         //Setting map zoom level
         float zoomLevel = 16.0f;
+
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(leeds, zoomLevel));
         map.setOnInfoWindowClickListener(this);
     }
@@ -90,5 +93,30 @@ public class MapFindActivity extends FragmentActivity implements OnMapReadyCallb
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
+    }*/
+
+//}
+
+    public class MapFindActivity extends AppCompatActivity {
+
+        private Button btnFind;
+
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main5);
+
+            btnFind = (Button)findViewById(R.id.btnFind);
+            btnFind.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    openCarParkData();
+                }
+            });
+
+        }
+
+        public void openCarParkData(){
+            Intent intent = new Intent(this, CarParkData.class);
+            startActivity(intent);
+        }
     }
-}

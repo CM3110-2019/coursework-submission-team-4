@@ -2,10 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.parkingprogram">
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,19 +15,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".ListItem"></activity>
+        <activity android:name=".CarParkData" />
 
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
 
-        <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="@string/map_key"/>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_key" />
 
-        <activity android:name=".MapActivity"></activity>
+        <activity android:name=".MapActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".FavouritesActivity" />
-        <activity android:name=".MapFindActivity" />
-        <!--activity android:name=".ApiActivity1" /-->
+        <activity android:name=".MapFindActivity" /> <!-- activity android:name=".ApiActivity1" / -->
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_main2"

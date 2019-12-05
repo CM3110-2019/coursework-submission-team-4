@@ -1,3 +1,5 @@
+/*
+
 package com.example.parkingprogram;
 
 
@@ -28,7 +30,7 @@ public class Pars extends AppCompatActivity {
     private TextView mTextViewResult;
     private RequestQueue mQueue;
 
-    @Override
+   // @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pars);
@@ -80,4 +82,4 @@ public class Pars extends AppCompatActivity {
 
         mQueue.add(request);
     }
-}
+}*/
