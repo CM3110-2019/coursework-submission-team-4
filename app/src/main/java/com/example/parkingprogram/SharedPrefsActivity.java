@@ -1,4 +1,4 @@
-/*
+
 package com.example.parkingprogram;
 
 import android.content.SharedPreferences;
@@ -11,20 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
-
 import android.widget.Button;
-
-
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-
-
-import android.widget.Toast;
-
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -63,6 +50,7 @@ public class SharedPrefsActivity extends AppCompatActivity{
 
         mEditor.putStringSet(getString(R.string.shared_pref_defaultFavourite), selectedFavouriteIds);
         mEditor = sharedPreferences.edit();
+        mEditor.apply();
 
         sharedPreferences.getString("key", "");
         Log.d(TAG, "onCreate: name: " + "");
@@ -92,28 +80,18 @@ public class SharedPrefsActivity extends AppCompatActivity{
 
     private void downloadCarParks() {
 
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, xmlURL, new Response.Listener<String>() {
+        parser = new HandleXML(xmlURL);
+        Log.d("sam", "Before fetchXML");
+        parser.fetchXML();
+        while (parser.parsingComplete) ;
+        //Testing
+        Log.d("name", parser.getCarParkIdentity());
+        Log.d("occupancy", parser.getCarParkOccupancy());
+        Log.d("spaces taken", parser.getOccupiedSpaces());
+        Log.d("capacity", parser.getTotalCapacity());
 
-            public void onResponse(String response) {
-                parser = new HandleXML(xmlURL);
-                parser.fetchXML(response);
-                while (parser.parsingComplete) ;
-                //Testing
-                Log.d("xmltest", parser.getCarParkIdentity());
 
-                adapter.setFavourites(favourites);
-            }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    Log.i(TAG, "error " + error.getLocalizedMessage());
-                    Toast.makeText(getApplicationContext(), getString(R.string.error_downloading_locations), Toast.LENGTH_LONG);
-
-                }
-            });
-            RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-             queue.add(stringRequest);
-        }
+    }
 
         private void checkSharedPreferences(){
             String favouritePark = sharedPreferences.getString(getString(R.string.selectFavouritePark), "");
@@ -122,4 +100,5 @@ public class SharedPrefsActivity extends AppCompatActivity{
         }
     }
 
-*/
+
+
