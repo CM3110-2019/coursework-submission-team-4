@@ -28,6 +28,7 @@
     <string name="error_downloading_locations">Error retrieving locations from the server.</string>
     <string name="error_processing_locations">Error processing the server response.</string>
     <string name="title_activity_testestsetstestst">testestsetstestst</string>
+    <string name="textview">TextView</string>
 
 
 </resources>

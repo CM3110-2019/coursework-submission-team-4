@@ -2,11 +2,9 @@ package com.example.parkingprogram;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SearchView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.FragmentActivity;
@@ -66,27 +64,10 @@ public class MapFindActivity extends FragmentActivity implements OnMapReadyCallb
             }
         });
 
-
-        //Parsing
-        parser = new HandleXML(url1);
-        Log.d("sam", "Before fetchXML");
-        parser.fetchXML();
-        while (parser.parsingComplete) ;
-        //Testing
-        Log.d("name", parser.getCarParkIdentity());
-        Log.d("occupancy", parser.getCarParkOccupancy());
-        Log.d("spaces taken", parser.getOccupiedSpaces());
-        Log.d("capacity", parser.getTotalCapacity());
-
-
-        //Printing to emulator
-       TextView tvXml = (TextView) findViewById(R.id.tvXml);
-       tvXml.setText(parser.getCarParkIdentity());
-
     }
 
     public void openCarParkInfo(){
-        Intent intent = new Intent(this, CarParkInfo.class);
+        Intent intent = new Intent(this, ListDataActivity.class);
         startActivity(intent);
     }
 
@@ -117,28 +98,4 @@ public class MapFindActivity extends FragmentActivity implements OnMapReadyCallb
     }
 
 }
-    // ------------------------JSOOOOOOON -----------------------
-    /*public class MapFindActivity extends AppCompatActivity {
-
-        private Button btnFind;
-
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main5);
-
-            btnFind = (Button)findViewById(R.id.btnFind);
-            btnFind.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    openCarParkData();
-                }
-            });
-
-        }
-
-        public void openCarParkData(){
-            Intent intent = new Intent(this, CarParkData.class);
-            startActivity(intent);
-        }
-    }*/
 

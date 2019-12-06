@@ -16,12 +16,10 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            app:layout_constraintBottom_toTopOf="@+id/btnFind"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:context="com.example.mapwithmarker.MapsMarkerActivity"
-            app:layout_constraintTop_toBottomOf="@+id/searchbtn" />
+            app:layout_constraintTop_toBottomOf="@+id/searchbtn"
+            tools:context="com.example.mapwithmarker.MapsMarkerActivity" />
 
     <TextView
         android:id="@+id/tvPriorityParking"
@@ -50,14 +48,14 @@
         android:id="@+id/btnFind"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="161dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="162dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginEnd="74dp"
         android:text="Find"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnLogout"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/map" />
+        tools:layout_editor_absoluteY="623dp" />
+
     <Button
         android:id="@+id/btnLogout"
         android:layout_width="wrap_content"
@@ -67,18 +65,6 @@
         android:text="logout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/tvXml"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="39dp"
-        android:layout_marginEnd="283dp"
-        android:text="xml"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/map" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
