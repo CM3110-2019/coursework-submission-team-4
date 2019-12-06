@@ -73,15 +73,15 @@ public class MapFindActivity extends FragmentActivity implements OnMapReadyCallb
         parser.fetchXML();
         while (parser.parsingComplete) ;
         //Testing
-        Log.d("xmltest", parser.getCarParkIdentity());
+        Log.d("name", parser.getCarParkIdentity());
+        Log.d("occupancy", parser.getCarParkOccupancy());
+        Log.d("spaces taken", parser.getOccupiedSpaces());
+        Log.d("capacity", parser.getTotalCapacity());
 
 
         //Printing to emulator
-        TextView tvXml = (TextView) findViewById(R.id.tvXml);
-        tvXml.setText(parser.getCarParkIdentity());
-
-
-
+       TextView tvXml = (TextView) findViewById(R.id.tvXml);
+       tvXml.setText(parser.getCarParkIdentity());
 
     }
 

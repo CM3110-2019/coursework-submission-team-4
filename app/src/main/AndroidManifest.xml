@@ -16,7 +16,6 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".Module" />
         <activity android:name=".CarParkInfo" />
-        <activity android:name=".CarParkData" />
         <activity android:name=".ListItem" />
 
         <uses-library
