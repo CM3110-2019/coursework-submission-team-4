@@ -46,10 +46,6 @@ public class SharedPrefsActivity extends AppCompatActivity{
     private HandleXML parser;
     private String xmlURL = "http://www.leedstravel.info/datex2/carparks/content.xml";
 
-    public String setFavourites() {
-        setFavourites();
-    }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
