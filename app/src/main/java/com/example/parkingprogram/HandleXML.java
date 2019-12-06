@@ -27,17 +27,26 @@ public class HandleXML {
     public String getCarParkIdentity() {
         return carParkIdentity;
     }
+
     public String getCarParkOccupancy() {
         return carParkOccupancy;
     }
+
     public String getOccupiedSpaces() {
         return occupiedSpaces;
     }
+
     public String getTotalCapacity() {
         return totalCapacity;
     }
-    public boolean isSelected() { return selected; }
-    public void setSelected(boolean selected) { this.selected = selected; }
+
+    public boolean isSelected() {
+        return selected;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
+    }
 
     public void parseXMLAndStoreIt(XmlPullParser myParser) {
         int event;
@@ -48,7 +57,7 @@ public class HandleXML {
                 String name = myParser.getName();
                 switch (event) {
                     case XmlPullParser.START_TAG:
-                        if (myParser.getName().equals("d2lm:situation")){
+                        if (myParser.getName().equals("d2lm:situation")) {
                             carParkIdentity = "";
 
                             carParkOccupancy = "";
@@ -66,9 +75,9 @@ public class HandleXML {
                         text = myParser.getText();
                         break;
                     case XmlPullParser.END_TAG:
-                        if (myParser.getName().equals("d2lm:situation")){
+                        if (myParser.getName().equals("d2lm:situation")) {
 
-                            Log.d("test", carParkIdentity + ":"+ carParkOccupancy);
+                            Log.d("test", carParkIdentity + ":" + carParkOccupancy);
 
 
                             //occupiedSpaces = "";
@@ -77,8 +86,7 @@ public class HandleXML {
 
                             //lat
                             //long
-                        }
-                        else if (myParser.getName().equals("d2lm:carParkIdentity")) {
+                        } else if (myParser.getName().equals("d2lm:carParkIdentity")) {
                             carParkIdentity = text;
                         } else if (myParser.getName().equals("d2lm:carParkOccupancy")) {
                             carParkOccupancy = text;
@@ -97,17 +105,18 @@ public class HandleXML {
             e.printStackTrace();
         }
     }
-    public void fetchXML(String response){
+
+    public void fetchXML(String response) {
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
-                try{
-                    URL url = new URL (urlString);
-                    HttpURLConnection connect= (HttpURLConnection)url.openConnection();
+                try {
+                    URL url = new URL(urlString);
+                    HttpURLConnection connect = (HttpURLConnection) url.openConnection();
                     String userpass = "mon1611872datex2:f13P76Scrtv240u";
                     //String basicAuth = "Basic " + javax.xml.bind.DataTypeConverter.printBase64Binary(userpass.getBytes());
                     String basicAuth = "Basic " + new String(Base64.getEncoder().encode(userpass.getBytes()));
-                    connect.setRequestProperty ("Authorization", basicAuth);
+                    connect.setRequestProperty("Authorization", basicAuth);
                     connect.setReadTimeout(10000);
                     connect.setConnectTimeout(15000);
                     connect.setRequestMethod("GET");
@@ -115,15 +124,16 @@ public class HandleXML {
                     connect.connect();
                     InputStream stream = connect.getInputStream();
                     xmlFactoryObject = XmlPullParserFactory.newInstance();
-                    XmlPullParser myparser= xmlFactoryObject.newPullParser();
-                    myparser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES,false);
+                    XmlPullParser myparser = xmlFactoryObject.newPullParser();
+                    myparser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
                     myparser.setInput(stream, null);
                     parseXMLAndStoreIt(myparser);
                     stream.close();
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         });
         thread.start();
     }
+}
