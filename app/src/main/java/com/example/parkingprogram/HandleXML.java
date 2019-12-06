@@ -13,13 +13,17 @@ public class HandleXML {
     private String carParkOccupancy = "full";
     private String occupiedSpaces = "spaces_taken";
     private String totalCapacity = "total_spaces";
+    private boolean selected;
     private String urlString = null;
     private XmlPullParserFactory xmlFactoryObject;
     public volatile boolean parsingComplete = true;
+
     public HandleXML(String url) {
         this.urlString = url;
 
     }
+
+
     public String getCarParkIdentity() {
         return carParkIdentity;
     }
@@ -32,6 +36,9 @@ public class HandleXML {
     public String getTotalCapacity() {
         return totalCapacity;
     }
+    public boolean isSelected() { return selected; }
+    public void setSelected(boolean selected) { this.selected = selected; }
+
     public void parseXMLAndStoreIt(XmlPullParser myParser) {
         int event;
         String text = null;
@@ -90,7 +97,7 @@ public class HandleXML {
             e.printStackTrace();
         }
     }
-    public void fetchXML(){
+    public void fetchXML(String response){
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -120,4 +127,3 @@ public class HandleXML {
         });
         thread.start();
     }
-}
