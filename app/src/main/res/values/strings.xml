@@ -22,5 +22,11 @@
     <string name="app_name_after">New User?</string>
     <string name="login">Login</string>
 
+    <string name="defaultFavourite">You currently have no favourite car parks</string>
+    <string name="selectFavouritePark">favourite park</string>
+    <string name="shared_pref_defaultFavourite" translatable = "false" > defaultFavourite </string>
+    <string name="error_downloading_locations">Error retrieving locations from the server.</string>
+    <string name="error_processing_locations">Error processing the server response.</string>
+
 
 </resources>

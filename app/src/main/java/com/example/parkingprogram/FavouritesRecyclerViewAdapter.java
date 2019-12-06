@@ -1,7 +1,7 @@
-/*
 package com.example.parkingprogram;
 
 import android.content.Context;
+import android.location.Location;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,37 +12,43 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+
+
 public class FavouritesRecyclerViewAdapter extends RecyclerView.Adapter<FavouritesRecyclerViewAdapter.FavouritesViewHolder> {
-    private List<FavouritesActivity> favourites;
+    private List<HandleXML> favourites;
     private LayoutInflater inflater;
 
-    public FavouritesRecyclerViewAdapter(Context context, List<FavouritesActivity> favourites){
+
+    public FavouritesRecyclerViewAdapter(Context context, List<HandleXML> favourites) {
         super();
         this.favourites = favourites;
         this.inflater = LayoutInflater.from(context);
 
     }
 
+    public void setFavourites(List<HandleXML> favourites){
+        this.favourites = favourites;
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
 
     public FavouritesRecyclerViewAdapter.FavouritesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
-        View favouritesView = this.inflater.inflate(R.layout.location_list_item, parent, false);
-        FavouritesViewHolder viewHolder = new FavouritesViewHolder(this. favouritesView);
-        return favouritesView;
+        View favouritesView = this.inflater.inflate(R.layout.activity_main6, parent, false);
+        FavouritesViewHolder viewHolder = new FavouritesViewHolder(this, favouritesView);
+        return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@nonNull FavouritesRecyclerViewAdapter.FavouritesViewHolder holder, int postion) {
-        Favourites favouritesDisplayed = this.favourites.get(postion);
+    public void onBindViewHolder(@NonNull FavouritesRecyclerViewAdapter.FavouritesViewHolder holder, int postion) {
+        HandleXML favouritesDisplayed = this.favourites.get(postion);
 
-        TextView tvListItemName = holder.itemView.findViewById(R.id.tvListItemName);
-        tvListItemName.setText(favouritesDisplayed.getName());
+        TextView favouriteItemName = holder.itemView.findViewById(R.id.favouriteItemName);
+        favouriteItemName.setText(favouritesDisplayed.getCarParkIdentity());
 
-        TextView tvListItemSelected = holder.itemView.findViewById(R.id.tvListItemSelected);
-        tvListItemSelected.setText(favouritesDisplayed.isSelected() ? "selected" : "");
-
+        TextView favouriteItemSelected = holder.itemView.findViewById(R.id.favouriteItemSelected);
+        favouriteItemSelected.setText(favouritesDisplayed.isSelected() ? "Selected" : "");
 
     }
 
@@ -65,16 +71,16 @@ public class FavouritesRecyclerViewAdapter extends RecyclerView.Adapter<Favourit
 
         @Override
         public void onClick(View view) {
-            int position = getAdapterPostion();
-            Favourites clickedFavourite = favourites.get(position);
+            int position = getAdapterPosition();
+            HandleXML clickedFavourite = favourites.get(position);
             clickedFavourite.setSelected(!clickedFavourite.isSelected());
 
-            TextView tvListItemSelected = itemView.findByViewId(R.id.tvListItemSelected);
+            TextView favouriteItemSelected = itemView.findViewById(R.id.favouriteItemSelected);
             if (clickedFavourite.isSelected()) {
-                tvListItemSelected.setText("Selected Favourite");
+                favouriteItemSelected.setText("Selected Favourite");
             } else {
-                tvListItemSelected.setText("");
+                favouriteItemSelected.setText("");
             }
         }
     }
-*/
+}
