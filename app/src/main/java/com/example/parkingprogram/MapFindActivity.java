@@ -20,6 +20,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapFindActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
     //Creating fields
+    private Button fndFavourite;
     private Button btnfind;
     private HandleXML parser;
     private SearchView searchbtn;
@@ -46,6 +47,14 @@ public class MapFindActivity extends FragmentActivity implements OnMapReadyCallb
             }
         });
 
+        fndFavourite = (Button) findViewById(R.id.fndFavourite);
+        fndFavourite.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                openFavouritesActivity();
+            }
+        });
+
         //Getting and finding the fragment(map)
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -69,6 +78,11 @@ public class MapFindActivity extends FragmentActivity implements OnMapReadyCallb
     public void openCarParkInfo(){
         Intent intent = new Intent(this, ListDataActivity.class);
         startActivity(intent);
+    }
+
+    public void openFavouritesActivity(){
+        Intent intent2 = new Intent(this, FavouritesActivity.class);
+        startActivity(intent2);
     }
 
 
