@@ -1,9 +1,12 @@
 package com.example.parkingprogram;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.FragmentActivity;
@@ -65,16 +68,17 @@ public class MapFindActivity extends FragmentActivity implements OnMapReadyCallb
 
 
         //Parsing
-        // parser = new HandleXML(url1);
-        //parser.fetchXML();
-        //while (parser.parsingComplete) ;
+        parser = new HandleXML(url1);
+        Log.d("sam", "Before fetchXML");
+        parser.fetchXML();
+        while (parser.parsingComplete) ;
         //Testing
-        //Log.d("xmltest", parser.getCarParkIdentity());
+        Log.d("xmltest", parser.getCarParkIdentity());
 
 
         //Printing to emulator
-        //  TextView tvXml = (TextView) findViewById(R.id.tvXml);
-        //tvXml.setText(parser.getCarParkIdentity());
+        TextView tvXml = (TextView) findViewById(R.id.tvXml);
+        tvXml.setText(parser.getCarParkIdentity());
 
 
 
@@ -137,3 +141,4 @@ public class MapFindActivity extends FragmentActivity implements OnMapReadyCallb
             startActivity(intent);
         }
     }*/
+

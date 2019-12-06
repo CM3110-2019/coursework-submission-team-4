@@ -54,6 +54,7 @@ public class HandleXML {
         try {
             event = myParser.getEventType();
             while (event != XmlPullParser.END_DOCUMENT) {
+                Log.d("Monica","1");
                 String name = myParser.getName();
                 switch (event) {
                     case XmlPullParser.START_TAG:
@@ -106,12 +107,13 @@ public class HandleXML {
         }
     }
 
-    public void fetchXML(String response) {
+    public void fetchXML() {
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
                     URL url = new URL(urlString);
+                    Log.d("Monica","2");
                     HttpURLConnection connect = (HttpURLConnection) url.openConnection();
                     String userpass = "mon1611872datex2:f13P76Scrtv240u";
                     //String basicAuth = "Basic " + javax.xml.bind.DataTypeConverter.printBase64Binary(userpass.getBytes());
