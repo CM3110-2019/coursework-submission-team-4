@@ -29,7 +29,6 @@
         <activity android:name=".MapActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".FavouritesActivity" />
-        <activity android:name=".SharedPrefsActivity" />
         <activity android:name=".MapFindActivity" /> <!-- activity android:name=".ApiActivity1" / -->
         <activity
             android:name=".LoginActivity"
