@@ -14,8 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ListItem"></activity>
-        <activity android:name=".CarParkData" />
+        <activity android:name=".CarParkData"></activity>
+        <activity android:name=".ListItem" />
 
         <uses-library
             android:name="org.apache.http.legacy"
