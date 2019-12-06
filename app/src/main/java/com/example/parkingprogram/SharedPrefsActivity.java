@@ -1,3 +1,4 @@
+/*
 package com.example.parkingprogram;
 
 import android.content.SharedPreferences;
@@ -121,3 +122,4 @@ public class SharedPrefsActivity extends AppCompatActivity{
         }
     }
 
+*/

@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.parkingprogram">
 
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -15,15 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-<<<<<<< HEAD
-        <activity android:name=".CarParkData"></activity>
+        <activity android:name=".Module" />
+        <activity android:name=".CarParkInfo" />
+        <activity android:name=".CarParkData" />
         <activity android:name=".ListItem" />
 
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
-=======
->>>>>>> 89b35fca43ba6664fac3f77c3615b3a047aecbdc
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -32,7 +30,7 @@
         <activity android:name=".MapActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".FavouritesActivity" />
-        <activity android:name= ".SharedPrefsActivity" />
+        <activity android:name=".SharedPrefsActivity" />
         <activity android:name=".MapFindActivity" /> <!-- activity android:name=".ApiActivity1" / -->
         <activity
             android:name=".LoginActivity"
@@ -45,7 +43,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
 
         <meta-data
             android:name="preloaded_fonts"

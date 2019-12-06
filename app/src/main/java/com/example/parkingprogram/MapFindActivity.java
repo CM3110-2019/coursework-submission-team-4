@@ -1,14 +1,12 @@
 package com.example.parkingprogram;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SearchView;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.fragment.app.FragmentActivity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -18,20 +16,18 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import org.w3c.dom.Text;
-
 
 public class MapFindActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
     //Creating fields
-   private Button btnfind;
+    private Button btnfind;
     private HandleXML parser;
     private SearchView searchbtn;
     private Button logout;
     private Object mMapFragment1;
 
     //Getting the API
-    private String url1 ="http://www.leedstravel.info/datex2/carparks/content.xml";
-    private String url2 ="&mode=xml";
+    private String url1 = "http://www.leedstravel.info/datex2/carparks/content.xml";
+    private String url2 = "&mode=xml";
 
     //Google map field
     GoogleMap map;
@@ -40,6 +36,14 @@ public class MapFindActivity extends FragmentActivity implements OnMapReadyCallb
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main5);
+
+        btnfind = (Button) findViewById(R.id.btnFind);
+        btnfind.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openCarParkInfo();
+            }
+        });
 
         //Getting and finding the fragment(map)
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -61,15 +65,25 @@ public class MapFindActivity extends FragmentActivity implements OnMapReadyCallb
 
 
         //Parsing
-        parser = new HandleXML(url1);
-        parser.fetchXML();
-        while (parser.parsingComplete) ;
+        // parser = new HandleXML(url1);
+        //parser.fetchXML();
+        //while (parser.parsingComplete) ;
         //Testing
-        Log.d("xmltest", parser.getCarParkIdentity());
+        //Log.d("xmltest", parser.getCarParkIdentity());
+
 
         //Printing to emulator
-        TextView tvXml = (TextView) findViewById(R.id.tvXml);
-        tvXml.setText(parser.getCarParkIdentity());
+        //  TextView tvXml = (TextView) findViewById(R.id.tvXml);
+        //tvXml.setText(parser.getCarParkIdentity());
+
+
+
+
+    }
+
+    public void openCarParkInfo(){
+        Intent intent = new Intent(this, CarParkInfo.class);
+        startActivity(intent);
     }
 
 
